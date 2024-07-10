@@ -1,0 +1,98 @@
+body {
+    background-image: url('../../assets/sky.jpg');
+    margin: 0;
+    background-position: 70% 35%;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    border: 4px solid #4B9CD3;
+    border-radius: 10px;
+    background-color:rgba(240, 248, 255, 0.651);
+}
+
+.header-title {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    color: #252525;
+    font-weight: 600;
+    font-family: 'Noto Sans';
+    background-color: #4B9CD3;
+    width: 100%;
+    height: 4vh;
+    color: white;
+    align-items: center;
+    font-size: larger;
+}
+.header-title:hover {
+    cursor: pointer;
+    color: #2f303198;
+}
+
+.header-date {
+    display: flex;
+    justify-content: left;
+    color: #252525;
+    font-weight: 600;
+    font-family: 'Noto Sans';
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.header-input {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: #f4f2f2;
+    border: none;
+    color: #252525;
+    padding: 0.7rem 1rem;
+    border-radius: 30px;
+    width: 15rem;
+    height: 1em;
+    margin-right: -4rem;
+    margin-bottom: 25px;
+}
+
+.header-button {
+    font-family: inherit;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.header-button:hover {
+    color: #2f303198;
+    cursor: pointer;
+}
+
+.header-input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-result-container {
+    font-family: 'Noto Sans';
+    display: flex;
+    align-items: start;
+    margin-top: 15px;
+    margin-left: 15px;
+    width:fit-content;
+    flex-direction: column;
+    /* border: red 1px solid; */
+    font-weight: 500;
+    font-size: 20px;
+    gap: 2vh;
+}
+
