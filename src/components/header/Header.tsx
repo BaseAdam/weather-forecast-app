@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { date } from "../../utils/date";
+import { AppDispatch } from "../../state/store";
+import { useDispatch } from "react-redux";
 
 export default function Header() {
+    const dispatch = useDispatch<AppDispatch>();
     const [city, setCity] = useState("");
     const navigate = useNavigate();
     const handleSearch = () => navigate(`/${city}`);
