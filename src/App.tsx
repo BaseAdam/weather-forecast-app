@@ -3,6 +3,7 @@ import Header from './components/header/Header';
 import './components/header/header.css'
 import './components/currentWeather/currentWeather.css';
 import './components/notFound/notFound.css';
+import './components/weatherForecast/weatherForecast.css';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { store } from './state/store';
