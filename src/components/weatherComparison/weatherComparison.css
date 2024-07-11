@@ -1,0 +1,56 @@
+.weather-comparison-container {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    margin: 15px;
+    color: #252525;
+    font-weight: 500;
+    font-family: 'Noto Sans';
+    border-top: 4px solid #4b9cd3;
+
+}
+.weather-comparison-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    color: #252525;
+    font-weight: 500;
+    font-family: 'Noto Sans';
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.weather-comparison-select{
+    width: 18vh;
+}
+
+.weather-chosenCity {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    margin: 15px;
+    width: 28vh;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 4px solid #4b9cd3b2;
+    border-radius: 10px;
+    background-color:rgba(240, 248, 255, 0.651);
+}
+
+.weather-chosenCity-info-list{
+    margin: 0px;
+    font-size: 15px;
+}
+
+.weather-comparison-info {
+    display: flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+}
+
+.weather-chosenCity {
+    display: flex;
+    align-items: center;
+    max-height: 20vh;
+}

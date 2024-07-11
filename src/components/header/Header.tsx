@@ -3,12 +3,17 @@ import { Link, useNavigate } from "react-router-dom";
 import { date } from "../../utils/date";
 import { AppDispatch } from "../../state/store";
 import { useDispatch } from "react-redux";
+import { setCityToCompare } from "../../features/citySlice";
 
 export default function Header() {
     const dispatch = useDispatch<AppDispatch>();
     const [city, setCity] = useState("");
     const navigate = useNavigate();
     const handleSearch = () => navigate(`/${city}`);
+
+    useEffect(() => {
+        dispatch(setCityToCompare(""));
+      }, [handleSearch, dispatch]);
 
     return (
         <nav className="header-container">

@@ -21,8 +21,11 @@ export const citySlice = createSlice({
         setCity: (state, action: { payload: { location: {name: string}; current: WeatherData } | null}) => {
             state.city = action.payload;
         },
+        setCityToCompare: (state, action: {payload: string}) => {
+            state.cityToCompare = action.payload;
+        }
     },
 });
 
-export const { setCity } = citySlice.actions;
+export const { setCity, setCityToCompare } = citySlice.actions;
 export default citySlice.reducer;
