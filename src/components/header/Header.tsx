@@ -30,9 +30,13 @@ export default function Header() {
                 <input className="header-input"
                     type="text"
                     placeholder="Enter city name"
+                    value={city}
                     onChange={(e) => setCity(e.target.value)}
                 />
-                <button className="header-button" onClick={handleSearch}>Search</button>
+                <button className="header-button" onClick={() => {
+                    handleSearch()
+                    setCity("")
+                    }}>Search</button>
             </div>
         </nav>
     );
