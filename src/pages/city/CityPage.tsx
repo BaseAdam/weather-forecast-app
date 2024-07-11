@@ -17,13 +17,13 @@ export const CityPage = () => {
             </div>
             <WeatherComparison options={
                 [
-                    {value: "Wroclaw", label: "Wrocław"},
-                    {value: "Cracow", label: "Kraków"},
-                    {value: "Gdansk", label: "Gdańsk"},
-                    {value: "Poznan", label: "Poznań"},
+                    {value: "Wroclaw", label: "Wroclaw"},
+                    {value: "Cracow", label: "Cracow"},
+                    {value: "Gdansk", label: "Gdansk"},
+                    {value: "Poznan", label: "Poznan"},
                     {value: "Szczecin", label: "Szczecin"},
-                    {value: "Warszawa", label: "Warszawa"},
-                    {value: "Ciechanow", label: "Ciechanów"},
+                    {value: "Warsaw", label: "Warsaw"},
+                    {value: "Ciechanow", label: "Ciechanow"},
                 ]
             }/>
         </div> 

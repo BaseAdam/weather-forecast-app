@@ -52,5 +52,6 @@
 .weather-chosenCity {
     display: flex;
     align-items: center;
-    max-height: 20vh;
+    max-height: 40vh;
+    padding: 15px;
 }

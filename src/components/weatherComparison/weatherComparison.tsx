@@ -31,7 +31,7 @@ export const WeatherComparison = ({ options }: CityComparisonProps) => {
                 <div className="weather-comparison-info">
                     {chosenCity === null ? (
                     <SpinnerCircular size={100} />)
-                    : (chosenCity && city && !error ? (
+                    : (chosenCity && city && chosenCity !== city && !error ? (
                         <>
                             <div className="weather-chosenCity">
                                 <p>In <span style={{fontWeight: 'bold'}}>{city?.location.name}</span> the weather is:</p>
@@ -68,7 +68,7 @@ export const WeatherComparison = ({ options }: CityComparisonProps) => {
                                     alt={chosenCity?.current.condition.text}
                                 />
                                 <p style={{fontWeight: 'bold', margin: '0px', marginBottom: '5px'}}>{chosenCity?.current.temp_c.toFixed(0)}°C</p>
-                                <p style={{margin: '0px'}}>Current: {chosenCity?.current.condition.text}</p>
+                                <p style={{margin: '0px', }}>{chosenCity?.current.condition.text}</p>
                             </div>
                         </>
                     ) : <></>)}
