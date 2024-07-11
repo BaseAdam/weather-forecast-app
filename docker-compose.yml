@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  weather-service:
+    build: .
+    container_name: weather-service
+    ports:
+      - 3000:3000
