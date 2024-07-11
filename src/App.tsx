@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/header/Header';
-import './components/header/header.css'
+import './components/header/header.css';
 import './components/currentWeather/currentWeather.css';
 import './components/notFound/notFound.css';
 import './components/weatherForecast/weatherForecast.css';
@@ -11,17 +11,16 @@ import { store } from './state/store';
 import { CityPage } from './pages/city/CityPage';
 import { HomePage } from './pages/home/HomePage';
 
-export default function App() {
+export default function App(): JSX.Element {
   return (
     <Provider store={store}>
-        <BrowserRouter>
+      <BrowserRouter>
         <Header />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/:city" element={<CityPage />} />
-          </Routes>
-        </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/:city" element={<CityPage />} />
+        </Routes>
+      </BrowserRouter>
     </Provider>
-);
+  );
 }
-
