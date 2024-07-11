@@ -31,6 +31,7 @@ export const WeatherComparison = ({ options }: CityComparisonProps) => {
                 <div className="weather-comparison-info">
                     {chosenCity === null ? (
                     <SpinnerCircular size={100} />)
+                    // check if data is fetched and if the chosen city to compare is not the same as the current city
                     : (chosenCity && city && chosenCity !== city && !error ? (
                         <>
                             <div className="weather-chosenCity">

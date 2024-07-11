@@ -11,6 +11,7 @@ export default function Header() {
     const navigate = useNavigate();
     const handleSearch = () => navigate(`/${city}`);
 
+    // clear city to compare on every search submit
     useEffect(() => {
         dispatch(setCityToCompare(""));
       }, [handleSearch, dispatch]);
