@@ -1,10 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useGetWeatherByParamQuery } from '../../features/weatherApi';
 import { SpinnerCircular } from 'spinners-react';
 import { NotFound } from '../notFound/notFound';
-import { setCity } from '../../features/citySlice';
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../state/store';
 
 export interface City {
   name: string;
@@ -12,15 +9,6 @@ export interface City {
 
 export function CurrentWeather({ name }: City): JSX.Element {
   const { isLoading, data: weatherData, error } = useGetWeatherByParamQuery(name);
-  const dispatch = useDispatch<AppDispatch>();
-
-  useEffect(() => {
-    if (weatherData) dispatch(setCity(weatherData));
-  }, [weatherData, dispatch]);
-
-  useEffect(() => {
-    if (error) dispatch(setCity(null));
-  }, [error, dispatch]);
 
   return isLoading ? (
     <SpinnerCircular size={100} />

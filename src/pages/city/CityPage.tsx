@@ -16,6 +16,7 @@ export function CityPage(): JSX.Element {
         <WeatherForecast name={city as string} day={3} />
       </div>
       <WeatherComparison
+        name={city as string}
         options={[
           { value: 'Wroclaw', label: 'Wroclaw' },
           { value: 'Cracow', label: 'Cracow' },

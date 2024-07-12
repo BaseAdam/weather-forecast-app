@@ -23,7 +23,15 @@ export default function Header(): JSX.Element {
       </Link>
       <p className="header-date">{date}</p>
       <div className="header-input-container">
-        <input className="header-input" type="text" placeholder="Enter city name" value={city} onChange={(e): void => setCity(e.target.value)} />
+        <input
+          className="header-input"
+          type="text"
+          placeholder="Enter city name"
+          value={city}
+          onChange={(e): void => {
+            setCity(e.target.value);
+          }}
+        />
         <button
           className="header-button"
           onClick={(): void => {
