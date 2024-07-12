@@ -7,6 +7,7 @@ export const weatherApi = createApi({
   }),
   endpoints: (builder) => ({
     getWeatherByParam: builder.query({
+      //getting api key from .env file but to simplify use of this app I've hardcoded my own key
       query: (cityName) =>
         `forecast.json?key=${
           process.env.REACT_APP_OPEN_WEATHER_API_KEY || '693b7eb959954dac9b693226240607'
