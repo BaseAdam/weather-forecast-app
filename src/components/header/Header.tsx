@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { date } from '../../utils/date';
-import { AppDispatch } from '../../state/store';
+import { AppDispatch } from '../../redux/store';
 import { useDispatch } from 'react-redux';
-import { setCityToCompare } from '../../features/citySlice';
+import { setCityToCompare } from '../../redux/citySlice';
 
 export default function Header(): JSX.Element {
   const dispatch = useDispatch<AppDispatch>();

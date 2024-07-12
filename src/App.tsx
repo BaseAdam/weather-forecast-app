@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from './components/header/Header';
 import './components/header/header.css';
-import './components/currentWeather/currentWeather.css';
-import './components/notFound/notFound.css';
-import './components/weatherForecast/weatherForecast.css';
-import './components/weatherComparison/weatherComparison.css';
+import './pages/city/components/current_weather/current_weather.css';
+import './components/not_found/not_found.css';
+import './pages/city/components/weather_forecast/weather_forecast.css';
+import './pages/city/components/weather_comparison/weather_comparison.css';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { store } from './state/store';
+import { store } from './redux/store';
 import { CityPage } from './pages/city/CityPage';
 import { HomePage } from './pages/home/HomePage';
 

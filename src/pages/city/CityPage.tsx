@@ -1,8 +1,8 @@
 import React from 'react';
-import { CurrentWeather } from '../../components/currentWeather/CurrentWeather';
+import { CurrentWeather } from './components/current_weather/CurrentWeather';
 import { useParams } from 'react-router-dom';
-import { WeatherForecast } from '../../components/weatherForecast/weatherForecast';
-import { WeatherComparison } from '../../components/weatherComparison/weatherComparison';
+import { WeatherForecast } from './components/weather_forecast/WeatherForecast';
+import { WeatherComparison } from './components/weather_comparison/WeatherComparison';
 
 export function CityPage(): JSX.Element {
   const { city } = useParams();

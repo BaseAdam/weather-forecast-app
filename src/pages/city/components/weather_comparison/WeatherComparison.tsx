@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SpinnerCircular } from 'spinners-react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../../state/store';
-import { useGetWeatherByParamQuery } from '../../features/weatherApi';
-import { setCityToCompare } from '../../features/citySlice';
+import { AppDispatch, RootState } from '../../../../redux/store';
+import { useGetWeatherByParamQuery } from '../../../../redux/weatherApi';
+import { setCityToCompare } from '../../../../redux/citySlice';
 import Select from 'react-select';
-import { City } from '../currentWeather/CurrentWeather';
+import { City } from '../current_weather/CurrentWeather';
 
 interface CityComparisonProps extends City {
   options: { value: string; label: string }[];
@@ -15,7 +15,15 @@ export function WeatherComparison({ name, options }: CityComparisonProps): JSX.E
   const dispatch = useDispatch<AppDispatch>();
   const cityToCompare = useSelector((state: RootState) => state.city.cityToCompare);
   const { data: currentCity, error } = useGetWeatherByParamQuery(name);
-  const { data: chosenCity } = useGetWeatherByParamQuery(cityToCompare);
+  const [skip, setSkip] = useState(true);
+  const { data: chosenCity } = useGetWeatherByParamQuery(cityToCompare, { skip });
+
+  useEffect(() => {
+    //when data is fetched then set skip to true to prevent bad requests
+    if (!skip && chosenCity) {
+      setSkip(true);
+    }
+  }, [chosenCity]);
 
   return currentCity && !error ? (
     <div className="weather-comparison-container">
@@ -25,7 +33,11 @@ export function WeatherComparison({ name, options }: CityComparisonProps): JSX.E
           className="weather-comparison-select"
           options={options}
           // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-          onChange={(e) => dispatch(setCityToCompare(e?.value as string))}
+          onChange={(e) => {
+            dispatch(setCityToCompare(e?.value as string));
+            // set skip to false to fetch new data
+            setSkip(false);
+          }}
           isDisabled={!options.length}
         />
       </div>
@@ -33,7 +45,7 @@ export function WeatherComparison({ name, options }: CityComparisonProps): JSX.E
         {chosenCity === null ? (
           <SpinnerCircular size={100} />
         ) : // check if data is fetched and if the chosen city to compare is not the same as the current city
-        chosenCity && currentCity && cityToCompare !== name && !error ? (
+        chosenCity && currentCity && chosenCity.location.name !== currentCity.location.name && cityToCompare !== name && !error ? (
           <>
             <div className="weather-chosenCity">
               <p>

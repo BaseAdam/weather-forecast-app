@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGetWeatherByParamQuery } from '../../features/weatherApi';
+import { useGetWeatherByParamQuery } from '../../../../redux/weatherApi';
 import { SpinnerCircular } from 'spinners-react';
 
 export interface WeatherForecastProps {

@@ -1,7 +1,7 @@
 import React from 'react';
-import { useGetWeatherByParamQuery } from '../../features/weatherApi';
+import { useGetWeatherByParamQuery } from '../../../../redux/weatherApi';
 import { SpinnerCircular } from 'spinners-react';
-import { NotFound } from '../notFound/notFound';
+import { NotFound } from '../../../../components/not_found/NotFound';
 
 export interface City {
   name: string;
