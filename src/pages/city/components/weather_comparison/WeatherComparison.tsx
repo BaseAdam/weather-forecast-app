@@ -36,7 +36,9 @@ export function WeatherComparison({ name, options }: CityComparisonProps): JSX.E
           onChange={(e) => {
             dispatch(setCityToCompare(e?.value as string));
             // set skip to false to fetch new data
-            setSkip(false);
+            if (e?.value !== 'undefined') {
+              setSkip(false);
+            }
           }}
           isDisabled={!options.length}
         />
@@ -45,7 +47,13 @@ export function WeatherComparison({ name, options }: CityComparisonProps): JSX.E
         {chosenCity === null ? (
           <SpinnerCircular size={100} />
         ) : // check if data is fetched and if the chosen city to compare is not the same as the current city
-        chosenCity && currentCity && chosenCity.location.name !== currentCity.location.name && cityToCompare !== name && !error ? (
+        chosenCity &&
+          currentCity &&
+          chosenCity.location.name !== currentCity.location.name &&
+          cityToCompare !== name &&
+          cityToCompare !== 'undefined' &&
+          cityToCompare !== '' &&
+          !error ? (
           <>
             <div className="weather-chosenCity">
               <p>

@@ -18,6 +18,7 @@ export function CityPage(): JSX.Element {
       <WeatherComparison
         name={city as string}
         options={[
+          { value: 'undefined', label: 'Not selected' },
           { value: 'Wroclaw', label: 'Wroclaw' },
           { value: 'Cracow', label: 'Cracow' },
           { value: 'Gdansk', label: 'Gdansk' },
