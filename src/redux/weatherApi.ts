@@ -11,7 +11,7 @@ export const weatherApi = createApi({
       query: (cityName) =>
         `forecast.json?key=${
           process.env.REACT_APP_OPEN_WEATHER_API_KEY || '693b7eb959954dac9b693226240607'
-        }&q=${cityName}&days=4&aqi=no&alerts=no&hour=12&lang=en`,
+        }&q=${cityName}&days=3&aqi=no&alerts=no&hour=12&lang=en`,
     }),
   }),
 });

@@ -13,7 +13,6 @@ export function CityPage(): JSX.Element {
         <CurrentWeather name={city as string} />
         <WeatherForecast name={city as string} day={1} />
         <WeatherForecast name={city as string} day={2} />
-        <WeatherForecast name={city as string} day={3} />
       </div>
       <WeatherComparison
         name={city as string}
